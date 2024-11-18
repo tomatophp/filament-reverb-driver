@@ -7,7 +7,6 @@ use Filament\Panel;
 
 class FilamentReverbDriverPlugin implements Plugin
 {
-
     public function getId(): string
     {
         return 'filament-reverb-driver';
