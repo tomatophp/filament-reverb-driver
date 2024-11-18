@@ -1,0 +1,29 @@
+{
+    "name": "FilamentReverbDriver",
+    "alias": "filament-reverb-driver",
+    "description": {
+        "ar": "Laravel Reverb Realtime Notification for Filament Alerts Sender",
+        "en": "Laravel Reverb Realtime Notification for Filament Alerts Sender",
+        "gr": "Laravel Reverb Realtime Notification for Filament Alerts Sender",
+        "sp": "Laravel Reverb Realtime Notification for Filament Alerts Sender"
+    },
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "TomatoPHP\\FilamentReverbDriver\\FilamentReverbDriverServiceProvider"
+    ],
+    "files": [],
+    "title": {
+        "ar": "Filament reverb driver",
+        "en": "Filament reverb driver",
+        "gr": "Filament reverb driver",
+        "sp": "Filament reverb driver"
+    },
+    "color": "#cc1448",
+    "icon": "heroicon-c-users",
+    "placeholder": "https://raw.githubusercontent.com/tomatophp/filament-reverb-driver/master/art/3x1io-tomato-reverb-driver.jpg",
+    "type": "plugin",
+    "version": "v1.0.0",
+    "github" : "https://github.com/tomatophp/filament-reverb-driver",
+    "docs" : "https://github.com/tomatophp/filament-reverb-driver"
+}
