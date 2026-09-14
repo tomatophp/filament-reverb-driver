@@ -1,4 +1,5 @@
 providers:
+  - Filament\Schemas\SchemasServiceProvider
   - BladeUI\Icons\BladeIconsServiceProvider
   - BladeUI\Heroicons\BladeHeroiconsServiceProvider
   - Filament\Actions\ActionsServiceProvider

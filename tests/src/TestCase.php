@@ -9,19 +9,28 @@ use Filament\FilamentServiceProvider;
 use Filament\Forms\FormsServiceProvider;
 use Filament\Infolists\InfolistsServiceProvider;
 use Filament\Notifications\NotificationsServiceProvider;
+use Filament\Schemas\SchemasServiceProvider;
 use Filament\Support\SupportServiceProvider;
 use Filament\Tables\TablesServiceProvider;
 use Filament\Widgets\WidgetsServiceProvider;
+use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 use Livewire\LivewireServiceProvider;
+use Orchestra\Testbench\Attributes\WithEnv;
+use Orchestra\Testbench\Concerns\WithWorkbench;
 use Orchestra\Testbench\TestCase as BaseTestCase;
 use RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider;
 use TomatoPHP\FilamentReverbDriver\FilamentReverbDriverServiceProvider;
+use TomatoPHP\FilamentReverbDriver\Tests\Models\User;
 
+#[WithEnv('DB_CONNECTION', 'testing')]
 abstract class TestCase extends BaseTestCase
 {
+    use LazilyRefreshDatabase;
+    use WithWorkbench;
+
     protected function getPackageProviders($app): array
     {
-        return [
+        $providers = [
             ActionsServiceProvider::class,
             BladeCaptureDirectiveServiceProvider::class,
             BladeHeroiconsServiceProvider::class,
@@ -29,6 +38,7 @@ abstract class TestCase extends BaseTestCase
             FilamentServiceProvider::class,
             FormsServiceProvider::class,
             InfolistsServiceProvider::class,
+            SchemasServiceProvider::class,
             LivewireServiceProvider::class,
             NotificationsServiceProvider::class,
             SupportServiceProvider::class,
@@ -37,12 +47,16 @@ abstract class TestCase extends BaseTestCase
             FilamentReverbDriverServiceProvider::class,
             AdminPanelProvider::class,
         ];
+
+        sort($providers);
+
+        return $providers;
     }
 
     public function getEnvironmentSetUp($app): void
     {
-        $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite.database', __DIR__ . '/../database/database.sqlite');
+        $app['config']->set('database.default', 'testing');
+        $app['config']->set('auth.providers.users.model', User::class);
 
         $app['config']->set('view.paths', [
             ...$app['config']->get('view.paths'),

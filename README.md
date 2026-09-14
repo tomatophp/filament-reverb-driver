@@ -1,4 +1,4 @@
-![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-reverb-driver/master/art/3x1io-tomato-reverb-driver.jpg)
+![Screenshot](https://raw.githubusercontent.com/tomatophp/filament-reverb-driver/master/arts/fadymondy-tomato-reverb-driver.jpg)
 
 # Filament reverb driver
 
@@ -7,6 +7,12 @@
 [![Downloads](https://poser.pugx.org/tomatophp/filament-reverb-driver/d/total.svg)](https://packagist.org/packages/tomatophp/filament-reverb-driver)
 
 Laravel Reverb Realtime Notification for Filament Alerts Sender
+
+## Version Compatibility
+
+| Plugin | Filament | Laravel     | PHP  |
+|--------|----------|-------------|------|
+| 5.x    | 5.x      | 12.x, 13.x  | 8.2+ |
 
 ## Installation
 
