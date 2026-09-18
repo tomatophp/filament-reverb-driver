@@ -11,6 +11,7 @@ providers:
   - Filament\Tables\TablesServiceProvider
   - Filament\Widgets\WidgetsServiceProvider
   - RyanChandler\BladeCaptureDirective\BladeCaptureDirectiveServiceProvider
+  - TomatoPHP\FilamentAlerts\FilamentAlertsServiceProvider
   - TomatoPHP\FilamentReverbDriver\FilamentReverbDriverServiceProvider
   - TomatoPHP\FilamentReverbDriver\Tests\AdminPanelProvider
 workbench:

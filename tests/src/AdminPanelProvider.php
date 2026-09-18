@@ -15,6 +15,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use TomatoPHP\FilamentAlerts\FilamentAlertsPlugin;
 use TomatoPHP\FilamentReverbDriver\FilamentReverbDriverPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -29,6 +30,10 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
+            ->plugin(
+                FilamentAlertsPlugin::make()
+                    ->useSettingsHub()
+            )
             ->plugin(
                 FilamentReverbDriverPlugin::make()
             )

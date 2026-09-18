@@ -1,11 +1,15 @@
 {
     "name": "tomatophp/filament-reverb-driver",
     "type": "library",
-    "description": "Laravel Reverb Realtime Notification for Filament Alerts Sender",
+    "description": "Laravel Reverb Realtime Websocket Notification Driver for Filament Alerts Sender",
     "keywords": [
         "php",
         "laravel",
-        "template"
+        "reverb",
+        "websockets",
+        "broadcasting",
+        "realtime",
+        "filament-plugin"
     ],
     "license": "MIT",
     "autoload": {
@@ -44,12 +48,16 @@
         "analyse": "vendor/bin/phpstan analyse src tests",
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
+        "format": "vendor/bin/pint",
+        "db": "vendor/bin/testbench package:create-sqlite-db && vendor/bin/testbench migrate"
     },
     "require": {
         "php": "^8.2",
         "filament/filament": "^5.0",
-        "tomatophp/console-helpers": "^1.1"
+        "filament/notifications": "^5.0",
+        "tomatophp/console-helpers": "^1.1",
+        "tomatophp/filament-alerts": "^5.0",
+        "mallardduck/blade-boxicons": "^2.4"
     },
     "require-dev": {
         "larastan/larastan": "^3.0",
@@ -65,5 +73,9 @@
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0"
     },
-    "version": "5.0.0"
+    "version": "5.0.0",
+    "homepage": "https://tomatophp.com/en/plugins/filament-reverb-driver",
+    "suggest": {
+        "laravel/reverb": "Run the websocket server the driver broadcasts to (^1.0|^2.0)"
+    }
 }

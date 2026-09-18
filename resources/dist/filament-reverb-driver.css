@@ -1,0 +1,42 @@
+/*
+ * A Filament 5 panel only compiles Filament's own classes, so this small sheet
+ * ships with the package. The rules are intentionally left unlayered,
+ * because Filament's reset wins over layered rules.
+ */
+.tomato-reverb-offline {
+    position: fixed;
+    inset-inline-end: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(251 191 36 / 0.4);
+    background-color: rgb(254 252 232);
+    color: rgb(146 64 14);
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.tomato-reverb-offline::before {
+    content: '';
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background-color: rgb(217 119 6);
+}
+
+.tomato-reverb-offline[hidden] {
+    display: none;
+}
+
+.dark .tomato-reverb-offline {
+    border-color: rgb(217 119 6 / 0.4);
+    background-color: rgb(69 26 3);
+    color: rgb(253 230 138);
+}

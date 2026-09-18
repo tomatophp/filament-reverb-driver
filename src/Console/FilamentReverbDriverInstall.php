@@ -35,6 +35,7 @@ class FilamentReverbDriverInstall extends Command
     {
         $this->info('Publish Vendor Assets');
         $this->artisanCommand(['migrate']);
+        $this->artisanCommand(['filament:assets']);
         $this->artisanCommand(['optimize:clear']);
         $this->info('Filament reverb driver installed successfully.');
     }
