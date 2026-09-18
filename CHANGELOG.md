@@ -1,4 +1,4 @@
-# v5.0.0
+# v5.1.0
 
 - first working release: a `reverb` driver for `tomatophp/filament-alerts` ^5.0
 - alerts are broadcast on the private per user channel only, never on a public one
